@@ -22,5 +22,5 @@ http://www.realitymod.com/forum/f109-pr-bf2-sa-private-forums/105484-clan-member
 
 Contributors
 ============
-Original Concept: [3dAC] blip2
+Original Concept: [3dAC] blip2  
 Joomla Module and Flags/Scores: [KSK] wenzul
