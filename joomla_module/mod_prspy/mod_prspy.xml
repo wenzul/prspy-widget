@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension
+	type="module"
+	version="2.5"
+	client="site"
+	method="upgrade">
+	<name>PR Spy Popup</name>
+	<author>wenzul</author>
+	<creationDate>Oct 2013</creationDate>
+	<copyright>Copyright (C) 2013 wenzul. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>wenzul@hotmail.com</authorEmail>
+	<authorUrl>-</authorUrl>
+	<version>2.5.0</version>
+	<description>This module uses PRSPY's API to show how many members are playing on what server.</description>
+	<files>
+		<filename module="mod_prspy">mod_prspy.php</filename>
+		<filename module="mod_prspy">index.html</filename>
+        <filename module="mod_prspy">mod_prspy.xml</filename>
+        <folder module="mod_prspy">tmpl</folder>
+        <folder module="mod_prspy">library</folder>
+	</files>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field
+					name="clantag"
+					type="text"
+					label="Clantag"
+					description="The clantag which will be searched."
+                    			required="true"
+                    			filter="string" />
+<!--			</fieldset>
+            		<fieldset name="advanced"> -->
+		            	<field
+					name="interval"
+                			type="text"
+               				default="30000"
+					required="true"
+					label="Interval"
+					description="Refresh interval of the popup."
+                    			filter="string" />
+           		 </fieldset>
+		</fields>
+	</config>
+</extension>

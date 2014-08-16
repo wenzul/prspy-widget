@@ -1,0 +1,102 @@
+
+#players {
+  font: normal 14px/20px Tahoma, Verdana, Arial, Sans-Serif;
+  position:fixed;
+  bottom:0;
+  right:16px;
+  min-height:20px;
+  width:auto;
+  min-width:325px;
+  max-width:350px;
+  text-align:left;
+  color:#8F8F8F;
+  background:#1B1B1B;
+  border:1px solid gray;
+  border-bottom:0;
+  z-index: 1;
+}
+
+.server {
+  font-size:11px;
+  padding:2px 5px;
+}
+
+.server div {
+  line-height:16px;
+}
+
+.server .number {
+  padding-right: 30px;
+}
+
+.server .name {
+  font-size:12px;
+  color:#6D5B34;
+  font-weight:bold;
+  text-decoration:none;
+}
+
+.highlight {
+  color:#6D5B34;
+  font-weight:bold;
+}
+
+.server .next {
+  color:#555;
+}
+
+#close {
+  position:absolute;
+  top:0;
+  right:0;
+  height:16px;
+  width:16px;
+  cursor:pointer;
+  line-height:13px;
+  text-align:center;
+  background:#000;
+  color:#FFF;
+  border-bottom:1px solid gray;
+  border-left:1px solid gray;
+}
+
+#refresh {
+  position:absolute;
+  top:0;
+  right:16px;
+  height:16px;
+  width:16px;
+  cursor:pointer;
+  line-height:13px;
+  text-align:center;
+  border-bottom:1px solid gray;
+  border-left:1px solid gray;
+  background:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QoECiYQdFg8MQAAAYZJREFUOMud0ztrVUEUBeDv3lwhSCBBCxlTCYLYmvgARUEs54D/QBtTWVkHU6igYJVCwdYfYDEjsUgn+BZBEGIKGw0HRMHgIyFijoVz4SYeE3DDNHtmrVlr7ZlO0zRg8s5L/6qqzgG/Uogf+70XUxOgtwWogx1lncVYVefZFOL3wXO9FmAX+3AcBzGCY9iNN1WdcwpxvZWgqnMPJ3GpgMbQLdsNprCIhT6mu0nAEUzjAF4h420Bd3EUp6o6D/2loKrzCE7gGWbwDh1cxt5CNIdHaLXQwUMsphA/F9JRfMB1PMBCCnFFuWEDQQrxa1XnJynEpoCHivTbWE4hrrVNa0OIKcSmqvNw8XoOXzDdB1d1Hsf+PzYmfm7OoIszuIDTGMV97Cz5TOIi3uNxm4JhXMHhkoeiJGEXxvENd1OIazMtBKt4ikMD/T1lwTJmcW/QdnfA/zpu4HkJbxWfiuQ5nMfNFOLqViEuVXW+iluYLzeuYCmF+GPbKZSax7XyHl7bpjr97/y/9RsFXoI3tBcmJQAAAABJRU5ErkJggg==') no-repeat;
+  background-position:left center;
+}
+
+#open {
+  position:fixed;
+  bottom:0;
+  right:0;
+  height:16px;
+  width:16px;
+  cursor:pointer;
+  line-height:13px;
+  text-align:center;
+  background:#1B1B1B;
+  color:#FFF;
+  border:1px solid gray;
+}
+
+#loading,#empty,#unavailible {
+  font-size:11px;
+  font-weight:bold;
+  text-align:center;
+  padding:5px 0;
+}
+
+.icon {
+  display:inline-block;
+  margin: 0 auto;
+}
