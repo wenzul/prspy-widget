@@ -14,6 +14,11 @@
 <body>
 
 <!-- insert this in page body -->
+<script type="text/javascript">
+var interval = 30000;
+var clantag = "[3dAC]";
+var prspydata = '/prspy/serverdata.php';
+</script>
 <div id="open">+</div>
 <div id="players" style="display: none;"><div id="close">-</div><div id="refresh"></div>
 <div id="servers">
