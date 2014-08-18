@@ -12,8 +12,14 @@ Put the prspy folder in the root directory of your site and copy the sections in
 
 Joomla Module
 ------------
+Copy *mod_prspy* into the modules folder of your Joomla! installation.
+You can install/acitvate the module in the administration backend.
+You can define the clantag to be filtered and a refresh interval via backend.
 Tested with Joomla!-Version 2.5.24.
-You can define the clantag to be filtered and the refresh interval in the administration backend of Joomla!.
+
+Example
+============
+![PRSpy Widget Example](preview.png?raw=true "PRSpy Widget Example")
 
 Links
 ============

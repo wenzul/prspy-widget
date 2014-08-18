@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension
 	type="module"
-	version="2.5"
+	version="2.5.24"
 	client="site"
 	method="upgrade">
-	<name>PR Spy Popup</name>
-	<author>wenzul</author>
+	<name>PRSpy Popup</name>
+	<author>[KSK] wenzul</author>
 	<creationDate>Oct 2013</creationDate>
-	<copyright>Copyright (C) 2013 wenzul. All rights reserved.</copyright>
-	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
-	<authorEmail>wenzul@hotmail.com</authorEmail>
+	<copyright>Copyright (C) 2014 wenzul. All rights reserved.</copyright>
+	<license>see LICENSE.txt</license>
+	<authorEmail>-</authorEmail>
 	<authorUrl>-</authorUrl>
-	<version>2.5.0</version>
+	<version>1.0</version>
 	<description>This module uses PRSPY's API to show how many members are playing on what server.</description>
 	<files>
 		<filename module="mod_prspy">mod_prspy.php</filename>
@@ -28,19 +28,28 @@
 					type="text"
 					label="Clantag"
 					description="The clantag which will be searched."
-                    			required="true"
-                    			filter="string" />
+                    required="true"
+                    filter="string" />
 <!--			</fieldset>
-            		<fieldset name="advanced"> -->
-		            	<field
-					name="interval"
-                			type="text"
-               				default="30000"
-					required="true"
-					label="Interval"
-					description="Refresh interval of the popup."
-                    			filter="string" />
-           		 </fieldset>
+                <fieldset name="advanced">
+-->
+                <field
+                    name="serverdata"
+                    type="text"
+                    default="serverdata.php"
+                    required="true"
+                    label="PRSpy data url"
+                    description="PRSpy data url of same domain."
+                    filter="string" />
+                <field
+                    name="interval"
+                    type="text"
+                    default="30000"
+                    required="true"
+                    label="Interval"
+                    description="Refresh interval of the popup."
+                    filter="string" />
+            </fieldset>
 		</fields>
 	</config>
 </extension>
