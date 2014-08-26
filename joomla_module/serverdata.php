@@ -13,8 +13,8 @@ $cachetime = 30;
 // serverdata json url (with timestamp similar to realitymod.com/prspy)
 $prspyurl = "http://www.realitymod.com/prspy/json/serverdata.json?" . time();
 
-// Is file modification time older than $cachetime seconds ago
-if (time() - $cachetime > filemtime($cachefile)) {
+// file initially does not exist or file modification time older than $cachetime seconds ago
+if (!file_exists($cachefile) || time() - $cachetime > filemtime($cachefile)) {
     // Prepare http query with a timeout, because realitymod.com offline every now and then
     $ctx = stream_context_create(array('http' => array('timeout' => 10)));
     $fp = fopen($cachefile, 'w');

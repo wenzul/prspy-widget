@@ -1,4 +1,4 @@
-#players {
+#prspy-visible {
   font: normal 14px/20px Tahoma, Verdana, Arial, Sans-Serif;
   position:fixed;
   bottom:0;
@@ -15,36 +15,36 @@
   z-index: 1;
 }
 
-.server {
+.prspy-server {
   font-size:11px;
   padding:2px 5px;
 }
 
-.server div {
+.prspy-server div {
   line-height:16px;
 }
 
-.server .number {
+.prspy-server .number {
   padding-right: 30px;
 }
 
-.server .name {
+.prspy-server .name {
   font-size:12px;
   color:#6D5B34;
   font-weight:bold;
   text-decoration:none;
 }
 
-.highlight {
+.prspy-highlight {
   color:#6D5B34;
   font-weight:bold;
 }
 
-.server .next {
+.prspy-server .next {
   color:#555;
 }
 
-#close {
+#prspy-close {
   position:absolute;
   top:0;
   right:0;
@@ -59,7 +59,7 @@
   border-left:1px solid gray;
 }
 
-#refresh {
+#prspy-refresh {
   position:absolute;
   top:0;
   right:16px;
@@ -74,7 +74,7 @@
   background-position:left center;
 }
 
-#open {
+#prspy-hidden {
   position:fixed;
   bottom:0;
   right:0;
@@ -88,14 +88,14 @@
   border:1px solid gray;
 }
 
-#loading,#empty,#unavailible {
+#prspy-loading,#prspy-empty,#prspy-unavailible {
   font-size:11px;
   font-weight:bold;
   text-align:center;
   padding:5px 0;
 }
 
-.icon {
+.prspy-icon {
   display:inline-block;
   margin: 0 auto;
 }
