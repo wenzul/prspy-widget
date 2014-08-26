@@ -397,5 +397,5 @@ function prspy_update() {
       jQuery('#prspy-refresh').attr('title', 'Last updated: ' + lastUpdate.toLocaleString());
     }
   });
-  prspy_timeout = setTimeout("prspy_update()", interval);
+  prspy_timeout = setTimeout(function(){prspy_update()}, interval);
 }

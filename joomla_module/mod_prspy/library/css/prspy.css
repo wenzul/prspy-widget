@@ -57,23 +57,19 @@
   color:#FFF;
   border-bottom:1px solid gray;
   border-left:1px solid gray;
-  right:0;
 }
 
 #prspy-refresh {
   position:absolute;
   top:0;
-  right:0;
+  right:16px;
   height:16px;
   width:16px;
   cursor:pointer;
   line-height:13px;
   text-align:center;
-  background:#000;
-  color:#FFF;
   border-bottom:1px solid gray;
   border-left:1px solid gray;
-  right:16px;
   background:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QoECiYQdFg8MQAAAYZJREFUOMud0ztrVUEUBeDv3lwhSCBBCxlTCYLYmvgARUEs54D/QBtTWVkHU6igYJVCwdYfYDEjsUgn+BZBEGIKGw0HRMHgIyFijoVz4SYeE3DDNHtmrVlr7ZlO0zRg8s5L/6qqzgG/Uogf+70XUxOgtwWogx1lncVYVefZFOL3wXO9FmAX+3AcBzGCY9iNN1WdcwpxvZWgqnMPJ3GpgMbQLdsNprCIhT6mu0nAEUzjAF4h420Bd3EUp6o6D/2loKrzCE7gGWbwDh1cxt5CNIdHaLXQwUMsphA/F9JRfMB1PMBCCnFFuWEDQQrxa1XnJynEpoCHivTbWE4hrrVNa0OIKcSmqvNw8XoOXzDdB1d1Hsf+PzYmfm7OoIszuIDTGMV97Cz5TOIi3uNxm4JhXMHhkoeiJGEXxvENd1OIazMtBKt4ikMD/T1lwTJmcW/QdnfA/zpu4HkJbxWfiuQ5nMfNFOLqViEuVXW+iluYLzeuYCmF+GPbKZSax7XyHl7bpjr97/y/9RsFXoI3tBcmJQAAAABJRU5ErkJggg==') no-repeat;
   background-position:left center;
 }
