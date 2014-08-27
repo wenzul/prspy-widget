@@ -1,7 +1,3 @@
-prspy-widget
-============
-Website widget to display clan members currently playing on Project Reality servers.
-
 Usage
 ============
 The file serverdata.php retrieves http://www.realitymod.com/prspy/json/serverdata.json?#time()# and deliver it from the same domain to avoid blocking messages (unsafe script) by different browsers.
