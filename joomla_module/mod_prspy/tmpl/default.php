@@ -4,7 +4,7 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 <script type="text/javascript">
 var interval = <?php echo $params->get('interval'); ?>;
 var clantags = <?php echo json_encode(explode(",", $params->get('clantags'))); ?>;
-var showtag = "<?php echo $params->get('showtag'); ?>";;
+var showtag = <?php echo $params->get('showtag'); ?>;
 var prspydata = "<?php echo JURI::base().$params->get('serverdata'); ?>";
 </script>
 <div id="prspy-hidden" style="display: none;">+</div>
