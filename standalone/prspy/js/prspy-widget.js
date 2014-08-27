@@ -338,22 +338,26 @@ function prspy_update() {
       jQuery('.prspy-server').remove();
       jQuery('#prspy-unavailible').hide();
       jQuery.each(json["Data"], function(ip, server) {
-        player_count = 0;
-        player_list = "";
-        jQuery.each(server["Players"], function(key, player) {
-          if (player["Name"].indexOf(clantag) !== -1) {
-            player_list = player_list + player["Name"].replace(clantag + " ", "") + ', ';
-            player_count++;
+        player_list = [];
+        jQuery.each(clantags, function(key, tag) {
+          if(tag.length > 0) {
+            jQuery.each(server["Players"], function(key, player) {
+              if (player["Name"].substr(0,tag.length) === tag) {
+                p = player["Name"];
+                if(!showtag) {
+                  p = p.substring(tag.length+1);
+                }
+                player_list.push(p);
+              }
+            });
           }
         });
-        // Cut last comma
-        player_list = player_list.substring(0, player_list.length - 2);
-        if (player_count > 0) {
+        if (player_list.length > 0) {
           // If first player found hide empty box
           jQuery('#prspy-empty').hide();
           var isare = "are";
           var s = "s";
-          if (player_count == 1) {
+          if (player_list.length == 1) {
             isare = "is";
             s = "";
           };
@@ -386,10 +390,10 @@ function prspy_update() {
             ':' + server["Teams"][1]["Deaths"].toString() + ')';
           jQuery('#prspy-servers').append(
             '<div class="prspy-server" style="border-bottom:1px solid;border-collapse:collapse;"><div class="number">' +
-            player_list + ' ' + isare +
+            player_list.join(", ") + ' ' + isare +
             ' playing on:</div><div class="prspy-icon ancient-countryflag ancient-countryflag-' + server[
               "Country"].toLowerCase() + '" title="' + countrycodes[server["Country"]] +
-            '"></div> <a class="name" href="http://www.realitymod.com/prspy/" target="_blank">' + servername + '</a>' + players + '<div class="next">' + map +
+            '"></div> <a class="name" href="http://www.realitymod.com/prspy/" target="_blank">' + servername + '</a> ' + players + '<div class="next">' + map +
             '</div><div class="next">' + team1 + ' <b>vs.</b> ' + team2 + '</div></div>');
         }
       });

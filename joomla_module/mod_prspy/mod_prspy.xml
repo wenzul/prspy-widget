@@ -24,12 +24,16 @@
 		<fields name="params">
 			<fieldset name="basic">
 				<field
-					name="clantag"
+					name="clantags"
 					type="text"
-					label="Clantag"
-					description="The clantag which will be searched."
+					label="Clantags"
+					description="The clantags which will be searched. (comma seperated)"
                     required="true"
                     filter="string" />
+                <field name="showtag" type="list" default="0" label="Show clantags" description="Show clantags before names in prspy widget." filter="string">
+					<option value="0">false</option>
+					<option value="1">true</option>
+				</field>
 <!--			</fieldset>
                 <fieldset name="advanced">
 -->

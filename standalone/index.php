@@ -15,15 +15,21 @@
 
 <!-- insert this in page body -->
 <script type="text/javascript">
+// refresh interval of widget in ms
 var interval = 30000;
-var clantag = "[3dAC]";
+// you can list more than one, e.g. ["[3dAC]", "[KSK]"];
+var clantags = ["[KSK]"];
+// show clantag in popup before name (values: true, false)
+var showtag = false;
+// prspy data url
 var prspydata = '/prspy/serverdata.php';
+//var prspydata = '../test/serverdata.json';
 </script>
 <div id="prspy-hidden" style="display: none;">+</div>
 <div id="prspy-visible" style="display: none;"><div id="prspy-close">-</div><div id="prspy-refresh"></div>
 <div id="prspy-servers">
 <div id="prspy-loading">Please wait... Loading...</div>
-<div id="prspy-empty" style="display: none;">There are currently no <script>document.write(clantag);</script> members playing.</div>
+<div id="prspy-empty" style="display: none;">There are currently no <script>if(showtag) document.write(clantags.join(", "));</script> members playing.</div>
 <div id="prspy-unavailible" style="display: none;">Sorry, realitymod.com seems to be offline.</div>
 </div>
 </div>
