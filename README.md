@@ -32,8 +32,8 @@ Libraries (included)
 
 Links
 ============
-Realitymod.com forum thread (Server administrators):
-http://www.realitymod.com/forum/f109-pr-bf2-sa-private-forums/105484-clan-members-currently-playing-prspy-2.html
+[Realitymod.com forum thread (only for server administrators)](http://www.realitymod.com/forum/f109-pr-bf2-sa-private-forums/105484-clan-members-currently-playing-prspy-2.html)
+
 
 Contributors
 ============
