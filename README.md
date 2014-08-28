@@ -14,6 +14,7 @@ Joomla Module
 * Copy `mod_prspy` into the modules folder of your Joomla! installation.
 * Acitvate and configure the settings in the administration backend.
 Tested with Joomla!-Version >=2.5.24.
+
 ![PRSpy Widget Joomla Settings](joomla-backend.png?raw=true "PRSpy Widget Joomla Settings")
 
 Settings
