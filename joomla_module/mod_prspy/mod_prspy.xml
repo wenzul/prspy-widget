@@ -4,7 +4,7 @@
 	version="2.5.24"
 	client="site"
 	method="upgrade">
-	<name>PRSpy Popup</name>
+	<name>PRSpy Widget</name>
 	<author>[KSK] wenzul</author>
 	<creationDate>Oct 2013</creationDate>
 	<copyright>Copyright (C) 2014 wenzul. All rights reserved.</copyright>

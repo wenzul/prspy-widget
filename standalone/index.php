@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>Prspy Widget</title>
+<title>PRSpy Widget</title>
 
 <!-- insert this in page header -->
 <link rel="stylesheet" type="text/css" href="/prspy/css/prspy.css">
