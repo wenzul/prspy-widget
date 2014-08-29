@@ -1,5 +1,4 @@
-var server_list = {};
-
+// country mapping
 countrycodes = {
   AF: "Afghanistan",
   AX: "Åland Islands",
@@ -251,6 +250,7 @@ countrycodes = {
   ZM: "Zambia",
   ZW: "Zimbabwe"
 };
+// faction mapping
 factions = {
   cf: "Canadian Forces",
   ch: " Chinese Forces",
@@ -278,73 +278,98 @@ factions = {
 };
 
 jQuery(document).ready(function() {
+  // interval reference
+  var prspy_interval = 0;
 
+  // initially check prspy widget visibility
   if (jQuery.cookie('hide_prspy') == "true") {
     jQuery('#prspy-hidden').show();
     jQuery('#prspy-visible').hide();
-    if (prspy_timeout)
-      clearTimeout(prspy_timeout);
   } else {
     jQuery('#prspy-hidden').hide();
     jQuery('#prspy-visible').show();
+    // start refresh interval
     prspy_update();
+    prspy_interval = setInterval(prspy_update, interval);
   }
 
+  // check page visibility on visibility change to dis-/enable interval
+  if (document.addEventListener) document.addEventListener("visibilitychange", function() {
+    if (document.hidden) {
+      // if page is not visible clear interval
+      clearInterval(prspy_interval);
+    }
+    else {
+      if (jQuery('#prspy-visible').is(":visible"))
+        // if page is visible clear interval on spec and start a new one
+        clearInterval(prspy_interval);
+        prspy_update();
+        prspy_interval = setInterval(prspy_update, interval);
+    }
+  });
+
+  // show widget
   jQuery('#prspy-hidden').click(function() {
     jQuery('#prspy-hidden').hide();
     jQuery('#prspy-visible').show();
     jQuery.cookie('hide_prspy', null);
     prspy_update();
+    prspy_interval = setInterval(prspy_update, interval);
   });
 
+  // hide widget
   jQuery('#prspy-close').click(function() {
     jQuery('#prspy-hidden').show();
     jQuery('#prspy-visible').hide();
     jQuery.cookie('hide_prspy', 'true');
-    if (prspy_timeout)
-      clearTimeout(prspy_timeout);
+    clearInterval(prspy_interval);
   });
 
+  // refresh widget content
   jQuery('#prspy-refresh').click(function() {
     jQuery('#prspy-empty').hide();
     jQuery('#prspy-unavailible').hide();
     //clear timeout and set a new one
-    if (prspy_timeout)
-      clearTimeout(prspy_timeout);
+    clearInterval(prspy_interval);
     prspy_update();
+    prspy_interval = setInterval(prspy_update, interval);
   });
 });
-var prspy_timeout = null;
 
 function prspy_update() {
   jQuery('#prspy-unavailible').hide();
   jQuery('#prspy-empty').hide();
   jQuery('#prspy-loading').show();
   jQuery('.prspy-server').remove();
-  server_list = {};
   jQuery.ajax({
     url: prspydata,
     dataType: 'json',
-    timeout: 10000, //10 second timeout
+    timeout: 10000, // 10 second timeout
     error: function() {
+      // show prspy unavailible message
       jQuery('#prspy-loading').hide();
       jQuery('#prspy-empty').hide();
       jQuery('.prspy-server').remove();
       jQuery('#prspy-unavailible').show();
     },
     success: function(json) {
+      // prepare widget content and pass json server data
       jQuery('#prspy-loading').hide();
       jQuery('#prspy-empty').show();
       jQuery('.prspy-server').remove();
       jQuery('#prspy-unavailible').hide();
+      // iterate servers
       jQuery.each(json["Data"], function(ip, server) {
+        // Player list
         player_list = [];
+        // iterate clantags
         jQuery.each(clantags, function(key, tag) {
-          if(tag.length > 0) {
+          if (tag.length > 0) {
+            // iterate players
             jQuery.each(server["Players"], function(key, player) {
               if (player["Name"].substr(0,tag.length) === tag) {
                 p = player["Name"];
-                if(!showtag) {
+                if (!showtag) {
                   p = p.substring(tag.length+1);
                 }
                 player_list.push(p);
@@ -353,16 +378,18 @@ function prspy_update() {
           }
         });
         if (player_list.length > 0) {
-          // If first player found hide empty box
+          // if first player found hide empty box
           jQuery('#prspy-empty').hide();
+          // is/are
           var isare = "are";
           var s = "s";
           if (player_list.length == 1) {
             isare = "is";
             s = "";
-          };
+          }
+          // Server name
           var servername = server["ServerName"].substring(14);
-          if(servername.length >= 34)
+          if (servername.length >= 34)
             servername = servername.substring(0,34) + "... ";
           // Map
           if (server["MapName"].length == 0) map = "Unknown";
@@ -401,5 +428,4 @@ function prspy_update() {
       jQuery('#prspy-refresh').attr('title', 'Last updated: ' + lastUpdate.toLocaleString());
     }
   });
-  prspy_timeout = setTimeout(function(){prspy_update()}, interval);
 }

@@ -6,6 +6,16 @@ Standalone Version
 ============
 * Copy `standalone/prspy/` into the root directory of your site.
 * Configure the widget settings in `standalone/index.php`.
+```js
+// refresh interval of widget in ms
+var interval = 30000;
+// you can list more than one, e.g. ["[3dAC]", "[KSK]"];
+var clantags = ["[KSK]"];
+// show clantag in popup before name (values: true, false)
+var showtag = false;
+// prspy data url
+var prspydata = '/prspy/serverdata.php';
+```
 * Copy the distinguished sections of `standalone/index.php` into your corresponding template page.
 
 Joomla Module
