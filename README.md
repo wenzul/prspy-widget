@@ -20,12 +20,19 @@ var prspydata = '/prspy/serverdata.php';
 
 Joomla Module
 ============
-* Run `joomla_module/make.bat` to import web files from standalone version. This is necessary to avoid duplicate files in version control which have to be adjusted twice during changes.
-* Copy `mod_prspy` into the modules folder of your Joomla! installation.
+* Run `make.bat` to import web files from standalone version. This is necessary to avoid duplicate files in version control which have to be adjusted twice during changes.
+* Copy `joomla_module/mod_prspy` into the `modules/` folder of your Joomla! installation.
 * Acitvate and configure the settings in the administration backend.
-Tested with Joomla!-Version >=2.5.24.
+Tested with Joomla!-Version 2.5.24.
 
 ![PRSpy Widget Joomla Settings](joomla-backend.png?raw=true "PRSpy Widget Joomla Settings")
+
+Wordpress Plugin
+============
+* Run `make.bat` to import web files from standalone version.
+* Copy `wordpress_plugin/prspy-widget` into the `wp-content/plugins/` folder of your Wordpress installation.
+* Acitvate and configure the settings in the administration backend.
+Tested with Wordpress Version 4.0.
 
 Settings
 ============
