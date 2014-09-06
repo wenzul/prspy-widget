@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Prspy-widget : PRSpy website widget to display clan members currently playing on  PR:BF2 Project Reality servers.">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Prspy-widget</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/wenzul/prspy-widget">View on GitHub</a>
+
+          <h1 id="project_title">Prspy-widget</h1>
+          <h2 id="project_tagline">PRSpy website widget to display clan members currently playing on  PR:BF2 Project Reality servers.</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/wenzul/prspy-widget/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/wenzul/prspy-widget/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a name="example" class="anchor" href="#example"><span class="octicon octicon-link"></span></a>Example</h1>
+
+<p><img src="https://github.com/wenzul/prspy-widget/raw/master/widget-example.png?raw=true" alt="PRSpy Widget Example" title="PRSpy Widget Example"></p>
+
+<p>This widget is optimized for Chromium. Please report any incompatibilities with other browsers or just do a pull request.</p>
+
+<h1>
+<a name="standalone-version" class="anchor" href="#standalone-version"><span class="octicon octicon-link"></span></a>Standalone Version</h1>
+
+<ul>
+<li>Copy <code>standalone/prspy/</code> into the root directory of your site.</li>
+<li>Configure the widget settings in <code>standalone/index.php</code>.</li>
+</ul><div class="highlight highlight-js"><pre><span class="c1">// refresh interval of widget in ms</span>
+<span class="kd">var</span> <span class="nx">interval</span> <span class="o">=</span> <span class="mi">30000</span><span class="p">;</span>
+<span class="c1">// you can list more than one, e.g. ["[3dAC]", "[KSK]"];</span>
+<span class="kd">var</span> <span class="nx">clantags</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"[KSK]"</span><span class="p">];</span>
+<span class="c1">// show clantag in popup before name (values: true, false)</span>
+<span class="kd">var</span> <span class="nx">showtag</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+<span class="c1">// prspy data url</span>
+<span class="kd">var</span> <span class="nx">prspydata</span> <span class="o">=</span> <span class="s1">'/prspy/serverdata.php'</span><span class="p">;</span>
+</pre></div>
+
+<ul>
+<li>Copy the distinguished sections of <code>standalone/index.php</code> into your corresponding template page.</li>
+</ul><h1>
+<a name="joomla-module" class="anchor" href="#joomla-module"><span class="octicon octicon-link"></span></a>Joomla Module</h1>
+
+<ul>
+<li>Run <code>make.bat</code> to import web files from standalone version. This is necessary to avoid duplicate files in version control which have to be adjusted twice during changes.</li>
+<li>Copy <code>joomla_module/mod_prspy</code> into the <code>modules/</code> folder of your Joomla! installation.</li>
+<li>Acitvate and configure the settings in the administration backend.</li>
+</ul><p>Tested with Joomla!-Version 2.5.24.</p>
+
+<p><img src="https://github.com/wenzul/prspy-widget/raw/master/joomla-backend.png?raw=true" alt="PRSpy Widget Joomla Settings" title="PRSpy Widget Joomla Settings"></p>
+
+<h1>
+<a name="wordpress-plugin" class="anchor" href="#wordpress-plugin"><span class="octicon octicon-link"></span></a>Wordpress Plugin</h1>
+
+<ul>
+<li>Run <code>make.bat</code> to import web files from standalone version.</li>
+<li>Copy <code>wordpress_plugin/prspy-widget</code> into the <code>wp-content/plugins/</code> folder of your Wordpress installation.</li>
+<li>Acitvate and configure the settings in the administration backend.</li>
+</ul><p>Tested with Wordpress Version 4.0.</p>
+
+<h1>
+<a name="settings" class="anchor" href="#settings"><span class="octicon octicon-link"></span></a>Settings</h1>
+
+<ul>
+<li>
+<em>Clantags</em> (<code>[KSK],[3dAC],...</code>) defines the clantag(s) which will be filtered.</li>
+<li>
+<em>Show clantags</em> (<code>true</code>, <code>false</code>) defines wether clantags are shown before names or not.</li>
+<li>
+<em>Interval</em> (<code>ms</code>) defines the refresh interval of the PRSpy widget in milliseconds.</li>
+<li>
+<em>PRSpy data url</em> (<code>prspy/serverdata.php</code>) defines a relative or absolute URL to PRSpy JSON data.
+The file <code>serverdata.php</code> retrieves <em><a href="http://www.realitymod.com/prspy/json/serverdata.json?#time()#">http://www.realitymod.com/prspy/json/serverdata.json?#time()#</a></em> and deliver it from the same domain. It avoids blocking messages like unsafe script by different browsers.</li>
+</ul><h1>
+<a name="libraries-included" class="anchor" href="#libraries-included"><span class="octicon octicon-link"></span></a>Libraries (included)</h1>
+
+<ul>
+<li><a href="https://jquery.com/download/">jQuery 1.11.1</a></li>
+<li><a href="https://plugins.jquery.com/cookie/">jQuery Cookie 1.4.1</a></li>
+</ul><h1>
+<a name="links" class="anchor" href="#links"><span class="octicon octicon-link"></span></a>Links</h1>
+
+<ul>
+<li><a href="http://www.realitymod.com/forum/f109-pr-bf2-sa-private-forums/105484-clan-members-currently-playing-prspy-2.html">Realitymod.com forum thread (only for server administrators)</a></li>
+<li><a href="http://www.realitymod.com/forum/f10-pr-bf2-general-discussion/131213-prspy-widget-webpage-clan-members-currently-playing.html#post2032817">Realitymod.com forum thread</a></li>
+</ul><h1>
+<a name="contributors" class="anchor" href="#contributors"><span class="octicon octicon-link"></span></a>Contributors</h1>
+
+<p>Original Concept: [3dAC] blip2<br>
+Joomla Module and Flags/Scores: [KSK] wenzul</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Prspy-widget maintained by <a href="https://github.com/wenzul">wenzul</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
