@@ -1,6 +1,8 @@
 Example
 ============
-![PRSpy Widget Example](widget-example.png?raw=true "PRSpy Widget Example")
+![PRSpy Widget Example](https://github.com/wenzul/prspy-widget/raw/master/widget-example.png?raw=true "PRSpy Widget Example")
+
+This widget is optimized for Chromium. Please report any incompatibilities with other browsers or just do a pull request.
 
 Standalone Version
 ============
@@ -23,15 +25,17 @@ Joomla Module
 * Run `make.bat` to import web files from standalone version. This is necessary to avoid duplicate files in version control which have to be adjusted twice during changes.
 * Copy `joomla_module/mod_prspy` into the `modules/` folder of your Joomla! installation.
 * Acitvate and configure the settings in the administration backend.
+
 Tested with Joomla!-Version 2.5.24.
 
-![PRSpy Widget Joomla Settings](joomla-backend.png?raw=true "PRSpy Widget Joomla Settings")
+![PRSpy Widget Joomla Settings](https://github.com/wenzul/prspy-widget/raw/master/joomla-backend.png?raw=true "PRSpy Widget Joomla Settings")
 
 Wordpress Plugin
 ============
 * Run `make.bat` to import web files from standalone version.
 * Copy `wordpress_plugin/prspy-widget` into the `wp-content/plugins/` folder of your Wordpress installation.
 * Acitvate and configure the settings in the administration backend.
+
 Tested with Wordpress Version 4.0.
 
 Settings
@@ -49,7 +53,8 @@ Libraries (included)
 
 Links
 ============
-[Realitymod.com forum thread (only for server administrators)](http://www.realitymod.com/forum/f109-pr-bf2-sa-private-forums/105484-clan-members-currently-playing-prspy-2.html)
+* [Realitymod.com forum thread (only for server administrators)](http://www.realitymod.com/forum/f109-pr-bf2-sa-private-forums/105484-clan-members-currently-playing-prspy-2.html)
+* [Realitymod.com forum thread](http://www.realitymod.com/forum/f10-pr-bf2-general-discussion/131213-prspy-widget-webpage-clan-members-currently-playing.html#post2032817)
 
 
 Contributors
