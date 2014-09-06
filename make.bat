@@ -9,14 +9,15 @@ echo.
 
 pause
 
-echo "Make joomla module..."
-copy %~d0%~p0standalone\prspy\serverdata.php %~d0%~p0joomla_module
-xcopy /S /E /I %~d0%~p0standalone\prspy\* %~d0%~p0joomla_module\mod_prspy\library\
-del %~d0%~p0joomla_module\mod_prspy\library\serverdata.php
-echo "Finished"
+SET command=robocopy /NP /NFL /NJH /NJS
+
+echo Make joomla module...
+%command% %~d0%~p0standalone\prspy %~d0%~p0joomla_module serverdata.php
+%command% /S /E %~d0%~p0standalone\prspy %~d0%~p0joomla_module\mod_prspy\library /XF serverdata.php
+echo Finished
 echo.
-echo "Make wordpress plugin..."
-xcopy /S /E /I %~d0%~p0standalone\prspy\* %~d0%~p0wordpress_plugin\prspy-widget\
-echo "Finished"
+echo Make wordpress plugin...
+%command% /S /E %~d0%~p0standalone\prspy %~d0%~p0wordpress_plugin\prspy-widget
+echo Finished
 
 pause
