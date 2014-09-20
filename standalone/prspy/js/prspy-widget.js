@@ -365,12 +365,14 @@ function prspy_update() {
         // iterate clantags
         jQuery.each(clantags, function(key, tag) {
           if (tag.length > 0) {
+            // only match actual BF2 clan tags (separated by whitespace)
+            tag += " ";
             // iterate players
             jQuery.each(server["Players"], function(key, player) {
               if (player["Name"].substr(0,tag.length) === tag) {
                 p = player["Name"];
                 if (!showtag) {
-                  p = p.substring(tag.length+1);
+                  p = p.substring(tag.length);
                 }
                 player_list.push(p);
               }
