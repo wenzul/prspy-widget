@@ -20,6 +20,12 @@
 var interval = 30000;
 // you can list more than one, e.g. ["[3dAC]", "[KSK]"];
 var clantags = ["[KSK]"];
+// Individual players (you can list more than one, e.g. ["MadMak.41", "BlameWicca"];)
+var vips = ["MadMak.41"];
+// Clan tags, starting from the end of a player's name (you can list more than one, e.g. [".41", ".42"];)
+var backtags = [".41"];
+// show backtag in popup after name (values: true, false)
+var showbacktag = false;
 // show clantag in popup before name (values: true, false)
 var showtag = false;
 // prspy data url
