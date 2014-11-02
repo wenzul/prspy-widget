@@ -362,6 +362,33 @@ function prspy_update() {
       jQuery.each(json["Data"], function(ip, server) {
         // Player list
         player_list = [];
+        // iterate individuals
+        jQuery.each(vips, function(key, vip) {
+          if (vip.length > 0) {
+            // iterate players
+            jQuery.each(server["Players"], function(key, player) {
+              if (player["Name"] === vip) {
+                p = player["Name"];
+                player_list.push(p);
+              }
+            });
+          }
+        });
+        // iterate clan tags, starting from the back of a player's name
+        jQuery.each(backtags, function(key, backtag) {
+          if (backtag.length > 0) {            
+            // iterate players
+            jQuery.each(server["Players"], function(key, player) {
+              if (player["Name"].substr(-backtag.length,backtag.length) === backtag) {
+                p = player["Name"];
+                if (!showbacktag) {
+                  p = p.substring(0, p.length - backtag.length);
+                }
+                player_list.push(p);
+              }
+            });
+          }
+        });
         // iterate clantags
         jQuery.each(clantags, function(key, tag) {
           if (tag.length > 0) {
